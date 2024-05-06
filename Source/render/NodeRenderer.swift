@@ -218,7 +218,7 @@ class NodeRenderer {
         guard let shapeCGImage = renderToImage(bounds: bounds, inset: inset, coloringMode: coloringMode)?.cgImage else {
             return
         }
-        
+
         let shapeImage = CIImage(cgImage: shapeCGImage)
         var filteredImage = shapeImage
         for effect in effects {

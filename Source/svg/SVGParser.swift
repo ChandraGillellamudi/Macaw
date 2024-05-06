@@ -470,8 +470,8 @@ open class SVGParser {
             if pattern.children.isEmpty {
                 return parentPattern?.content
             } else if pattern.children.count == 1,
-                let child = pattern.children.first,
-                let shape = try parseNode(child) as? Shape {
+                      let child = pattern.children.first,
+                      let shape = try parseNode(child) as? Shape {
                 return shape
             } else {
                 var shapes = [Shape]()
@@ -876,7 +876,7 @@ open class SVGParser {
         return dashes
     }
 
-	fileprivate func getMatrix(_ element: XMLHash.XMLElement, attribute: String) -> [Double] {
+    fileprivate func getMatrix(_ element: XMLHash.XMLElement, attribute: String) -> [Double] {
         var result = [Double]()
         if let values = element.allAttributes[attribute]?.text {
             let separatedValues = values.components(separatedBy: CharacterSet(charactersIn: " ,"))
@@ -2248,7 +2248,7 @@ fileprivate extension Scanner {
             return scanUpTo(substring, into: &string) ? string as String? : nil
         }
     }
-    
+
     /// A version of `scanString(_:)`, available for an earlier OS.
     func scannedString(_ searchString: String) -> String? {
         if #available(OSX 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *) {

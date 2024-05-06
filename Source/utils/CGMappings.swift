@@ -146,7 +146,7 @@ public extension Node {
         let transform = LayoutHelper.calcTransform(self, layout, size)
         ctx.concatenate(transform.toCG())
         renderer.render(in: ctx, force: false, opacity: self.opacity)
-        
+
         defer {
             MGraphicsEndImageContext()
             renderer.dispose()
